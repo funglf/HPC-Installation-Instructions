@@ -46,8 +46,8 @@ SCALAPACK_VERSION=2.2.2
 
 ### Define install location
 ```bash
-SCALAPACK_PACKAGE=${SCALAPACK_VERSION}-${COMPILER}-${MPI}-aocl${AOCL_VERSION}
-SCALAPACK_ROOT=${SW_DIR}/scalapack/${SCALAPACK_PACKAGE}
+SCALAPACK_BASENAME=${SCALAPACK_VERSION}-${COMPILER}-${MPI}-aocl${AOCL_VERSION}
+SCALAPACK_ROOT=${SW_DIR}/scalapack/${SCALAPACK_BASENAME}
 ```
 
 ## Build
@@ -92,7 +92,7 @@ mkdir -p ${MODULE_DIR}/scalapack
 
 ### Write Modulefile
 ```bash
-tee ${MODULE_DIR}/aocl/${SCALAPACK_PACKAGE}.lua > /dev/null <<EOF
+tee ${MODULE_DIR}/scalapack/${SCALAPACK_BASENAME}.lua > /dev/null <<EOF
 help([[
 ScaLAPACK ${SCALAPACK_VERSION}
 ===============
